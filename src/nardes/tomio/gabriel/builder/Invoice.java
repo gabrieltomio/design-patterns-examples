@@ -1,6 +1,6 @@
 package nardes.tomio.gabriel.builder;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -8,13 +8,13 @@ public final class Invoice {
 
 	private final String companyName;
 	private final String id;
-	private final Calendar date;
+	private final LocalDate date;
 	private final List<ItemInvoice> items;
 	private final double tax;
 	private final double gross;
 	private final String note;
 
-	public Invoice(final String companyName, final String id, final Calendar date, final List<ItemInvoice> items, final double tax, final double gross, final String note) {
+	public Invoice(final String companyName, final String id, final LocalDate date, final List<ItemInvoice> items, final double tax, final double gross, final String note) {
 		this.companyName = companyName;
 		this.id = id;
 		this.date = date;
@@ -32,7 +32,7 @@ public final class Invoice {
 		return id;
 	}
 
-	public Calendar getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 

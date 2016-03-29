@@ -1,20 +1,22 @@
 package nardes.tomio.gabriel.builder;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class InvoiceBuilder {
 
 	private String companyName;
 	private String id;
-	private Calendar date;
+	private LocalDate date;
 	private List<ItemInvoice> items;
 	private double tax;
 	private double gross;
 	private String note;
 
 	public InvoiceBuilder() {
-		this.date = Calendar.getInstance();
+		items = new ArrayList<>();
+		onDate(LocalDate.now());
 	}
 
 	public InvoiceBuilder forEnterprise(final String companyName) {
@@ -27,7 +29,7 @@ public final class InvoiceBuilder {
 		return this;
 	}
 
-	public InvoiceBuilder onDate(final Calendar date) {
+	public InvoiceBuilder onDate(final LocalDate date) {
 		this.date = date;
 		return this;
 	}
