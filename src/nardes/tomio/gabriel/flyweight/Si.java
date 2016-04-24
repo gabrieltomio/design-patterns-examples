@@ -1,6 +1,6 @@
 package nardes.tomio.gabriel.flyweight;
 
-public class Si implements Note {
+class Si implements Note {
 
 	@Override
 	public String symbol() {
